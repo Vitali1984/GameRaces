@@ -96,10 +96,14 @@ class ViewController: UIViewController {
         buttonLeft.addTarget(self, action: #selector(moveCarLeft), for: .touchUpInside)
         buttonLeft.layer.cornerRadius = 20
         buttonLeft.clipsToBounds = true
+        buttonLeft.titleLabel?.font = UIFont(name: "Roboto-Italic", size: 24)
+        buttonLeft.setTitle("left", for:.normal)
+        buttonLeft.setTitleColor(.black, for: .normal)
         
         imageLeft = UIImageView()
         let imageLeftString = UIImage(named: "left")
         imageLeft.image = imageLeftString
+        
         customView.addSubview(buttonLeft)
         customView.addSubview(imageLeft)
         
@@ -108,6 +112,9 @@ class ViewController: UIViewController {
         buttonRihgt.addTarget(self, action: #selector(moveCarRight), for: .touchUpInside)
         buttonRihgt.layer.cornerRadius = 20
         buttonRihgt.clipsToBounds = true
+        buttonRihgt.titleLabel?.font = UIFont(name: "Roboto-Italic", size: 24)
+        buttonRihgt.setTitle("right", for:.normal)
+        buttonRihgt.setTitleColor(.black, for: .normal)
         
         imageRight = UIImageView()
         let imageRightString = UIImage(named: "right")
