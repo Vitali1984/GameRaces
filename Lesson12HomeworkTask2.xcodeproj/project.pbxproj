@@ -14,6 +14,8 @@
 		BA5A29C527B7EF16004E72AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5A29C427B7EF16004E72AD /* Assets.xcassets */; };
 		BA5A29C827B7EF16004E72AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5A29C627B7EF16004E72AD /* LaunchScreen.storyboard */; };
 		BA8FDC5E27C5703B004C251B /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FDC5D27C5703B004C251B /* StartScreen.swift */; };
+		BA8FDC6227C78E53004C251B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FDC6127C78E53004C251B /* UIColor+hex.swift */; };
+		BA8FDC6427C78E9A004C251B /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FDC6327C78E9A004C251B /* UIView+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BA5A29C727B7EF16004E72AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA5A29C927B7EF16004E72AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA8FDC5D27C5703B004C251B /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		BA8FDC6127C78E53004C251B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		BA8FDC6327C78E9A004C251B /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				BA5A29BB27B7EF0E004E72AD /* AppDelegate.swift */,
 				BA5A29BD27B7EF0E004E72AD /* SceneDelegate.swift */,
 				BA5A29BF27B7EF0E004E72AD /* ViewController.swift */,
-				BA8FDC5C27C5701E004C251B /* New Group */,
+				BA8FDC6127C78E53004C251B /* UIColor+hex.swift */,
+				BA8FDC6327C78E9A004C251B /* UIView+Utilities.swift */,
+				BA8FDC5C27C5701E004C251B /* Start Screen */,
 				BA5A29C127B7EF0E004E72AD /* Main.storyboard */,
 				BA5A29C427B7EF16004E72AD /* Assets.xcassets */,
 				BA5A29C627B7EF16004E72AD /* LaunchScreen.storyboard */,
@@ -70,12 +76,12 @@
 			path = Lesson12HomeworkTask2;
 			sourceTree = "<group>";
 		};
-		BA8FDC5C27C5701E004C251B /* New Group */ = {
+		BA8FDC5C27C5701E004C251B /* Start Screen */ = {
 			isa = PBXGroup;
 			children = (
 				BA8FDC5D27C5703B004C251B /* StartScreen.swift */,
 			);
-			path = "New Group";
+			path = "Start Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +157,10 @@
 			files = (
 				BA5A29C027B7EF0E004E72AD /* ViewController.swift in Sources */,
 				BA5A29BC27B7EF0E004E72AD /* AppDelegate.swift in Sources */,
+				BA8FDC6227C78E53004C251B /* UIColor+hex.swift in Sources */,
 				BA8FDC5E27C5703B004C251B /* StartScreen.swift in Sources */,
 				BA5A29BE27B7EF0E004E72AD /* SceneDelegate.swift in Sources */,
+				BA8FDC6427C78E9A004C251B /* UIView+Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
