@@ -13,6 +13,8 @@
 		BA5A29C327B7EF0E004E72AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5A29C127B7EF0E004E72AD /* Main.storyboard */; };
 		BA5A29C527B7EF16004E72AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5A29C427B7EF16004E72AD /* Assets.xcassets */; };
 		BA5A29C827B7EF16004E72AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5A29C627B7EF16004E72AD /* LaunchScreen.storyboard */; };
+		BA8D57A027D783FB00E4ADC3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D579F27D783FB00E4ADC3 /* SettingsViewController.swift */; };
+		BA8D57A227D7840B00E4ADC3 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D57A127D7840B00E4ADC3 /* SettingsViewController.storyboard */; };
 		BA8FDC5E27C5703B004C251B /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FDC5D27C5703B004C251B /* StartScreen.swift */; };
 		BA8FDC6227C78E53004C251B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FDC6127C78E53004C251B /* UIColor+hex.swift */; };
 		BA8FDC6427C78E9A004C251B /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FDC6327C78E9A004C251B /* UIView+Utilities.swift */; };
@@ -28,6 +30,8 @@
 		BA5A29C427B7EF16004E72AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA5A29C727B7EF16004E72AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA5A29C927B7EF16004E72AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA8D579F27D783FB00E4ADC3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BA8D57A127D7840B00E4ADC3 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		BA8FDC5D27C5703B004C251B /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		BA8FDC6127C78E53004C251B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		BA8FDC6327C78E9A004C251B /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		BA5A29BA27B7EF0E004E72AD /* Lesson12HomeworkTask2 */ = {
 			isa = PBXGroup;
 			children = (
+				BA8D57A427D7843E00E4ADC3 /* Settings */,
 				BA5A29BB27B7EF0E004E72AD /* AppDelegate.swift */,
 				BA5A29BD27B7EF0E004E72AD /* SceneDelegate.swift */,
 				BA5A29BF27B7EF0E004E72AD /* ViewController.swift */,
@@ -77,6 +82,15 @@
 				BA5A29C927B7EF16004E72AD /* Info.plist */,
 			);
 			path = Lesson12HomeworkTask2;
+			sourceTree = "<group>";
+		};
+		BA8D57A427D7843E00E4ADC3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BA8D579F27D783FB00E4ADC3 /* SettingsViewController.swift */,
+				BA8D57A127D7840B00E4ADC3 /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		BA8FDC5C27C5701E004C251B /* Start Screen */ = {
@@ -155,6 +169,7 @@
 			files = (
 				BA5A29C827B7EF16004E72AD /* LaunchScreen.storyboard in Resources */,
 				BA8FDC6727C7A25A004C251B /* Roboto-Italic.ttf in Resources */,
+				BA8D57A227D7840B00E4ADC3 /* SettingsViewController.storyboard in Resources */,
 				BA5A29C527B7EF16004E72AD /* Assets.xcassets in Resources */,
 				BA5A29C327B7EF0E004E72AD /* Main.storyboard in Resources */,
 			);
@@ -169,6 +184,7 @@
 			files = (
 				BA5A29C027B7EF0E004E72AD /* ViewController.swift in Sources */,
 				BA5A29BC27B7EF0E004E72AD /* AppDelegate.swift in Sources */,
+				BA8D57A027D783FB00E4ADC3 /* SettingsViewController.swift in Sources */,
 				BA8FDC6227C78E53004C251B /* UIColor+hex.swift in Sources */,
 				BA8FDC5E27C5703B004C251B /* StartScreen.swift in Sources */,
 				BA5A29BE27B7EF0E004E72AD /* SceneDelegate.swift in Sources */,
