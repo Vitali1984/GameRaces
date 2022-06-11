@@ -19,6 +19,5 @@ extension UIView {
         gradient.colors = [UIColor.white.cgColor,UIColor.blue.cgColor]
         gradient.cornerRadius = 30
         self.layer.insertSublayer(gradient, at: 0)
-        
     }
 }

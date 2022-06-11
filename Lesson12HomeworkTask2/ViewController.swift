@@ -37,14 +37,11 @@ class ViewController: UIViewController {
     private var buttonRihgt: UIButton!
     private var imageRight: UIImageView!
     private var imageLeft: UIImageView!
-    
     private var labelLeft: UILabel!
-    var userName: String!
-    var userAge: String!
     private var labelRight: UILabel!
-    var userDistace: String! = "0"
-    var userTime: String! = "0"
-    var countSec: Int = 0
+
+    var userRacer = UserRacer()
+    private var countSec: Int = 0
 
     // MARK: - ViewControllerLifeCycle
     // MARK: -
@@ -144,7 +141,7 @@ class ViewController: UIViewController {
         customView.addSubview(imageRight)
         
         labelLeft = UILabel()
-        labelLeft.text = "USER:" + userName + String(userAge)
+        labelLeft.text = "USER:" + (userRacer.userName ?? "") + (userRacer.userAge ?? "")
         labelLeft.textAlignment = .left
         customView.addSubview(labelLeft)
         
@@ -157,40 +154,41 @@ class ViewController: UIViewController {
 
     private func setupImageFrame() {
         viewRoad.frame = CGRect(x: view.bounds.midX - viewRoadWeight/2,
-                                 y: view.bounds.minY - viewRoadHeight,
-                                 width: viewRoadWeight,
-                                 height: viewRoadHeight)
+                                y: view.bounds.minY - viewRoadHeight,
+                                width: viewRoadWeight,
+                                height: viewRoadHeight)
         viewRoad1.frame = CGRect(x: view.bounds.midX - viewRoadWeight/2,
                                  y: view.bounds.minY - viewRoadHeight,
                                  width: viewRoadWeight,
                                  height: viewRoadHeight)
         imageStone.frame = CGRect(x: view.bounds.minX + 220,
-                                 y: view.bounds.minY - 111,
-                                 width: 100,
-                                 height: 80)
+                                  y: view.bounds.minY - 111,
+                                  width: 100,
+                                  height: 80)
         imageStone1.frame = CGRect(x: view.bounds.minX,
-                                 y: view.bounds.minY - 111,
-                                 width: 100,
-                                 height: 80)
+                                   y: view.bounds.minY - 111,
+                                   width: 100,
+                                   height: 80)
         imageStone2.frame = CGRect(x: view.bounds.minX + 40,
-                                 y: view.bounds.minY - 111,
-                                 width: 100,
-                                 height: 80)
+                                   y: view.bounds.minY - 111,
+                                   width: 100,
+                                   height: 80)
         imageStone3.frame = CGRect(x: view.bounds.minX + 80,
-                                 y: view.bounds.minY - 111,
-                                 width: 100,
-                                 height: 80)
+                                   y: view.bounds.minY - 111,
+                                   width: 100,
+                                   height: 80)
         imageStone4.frame = CGRect(x: view.bounds.minX + 320,
-                                 y: view.bounds.minY - 111,
-                                 width: 100,
-                                 height: 80)
+                                   y: view.bounds.minY - 111,
+                                   width: 100,
+                                   height: 80)
         imageCar.frame = CGRect(x: view.bounds.midX - 50,
-                                 y: view.bounds.maxY - 200,
-                                 width: 100,
-                                 height: 100)
+                                y: view.bounds.maxY - 200,
+                                width: 100,
+                                height: 100)
         buttonLeft.frame = CGRect(x: view.bounds.minX + 50,
                                   y: view.bounds.maxY - 80,
-                                  width: 120, height: 50)
+                                  width: 120,
+                                  height: 50)
         imageLeft.frame = CGRect(x: view.bounds.minX + 50,
                                  y: view.bounds.maxY - 80,
                                  width: 60,
@@ -212,9 +210,8 @@ class ViewController: UIViewController {
                                  width: 140,
                                  height: 100)
     }
-    
     @objc private func viewRoadAnimation(viewAnimation: UIView, delay: TimeInterval) {
-        UIView.animate(withDuration: 4, delay: 0, options: [.repeat, .curveLinear]) {
+        UIView.animate(withDuration: 4, delay: 0, options: [.repeat,.curveLinear]) {
             self.viewRoad.frame = CGRect(
                 x: self.view.bounds.midX - self.viewRoadWeight,
                 y: self.view.bounds.maxY + self.viewRoadHeight,
@@ -222,9 +219,8 @@ class ViewController: UIViewController {
                 height: self.viewRoadHeight)
         }
     }
-    
     @objc private func viewRoadAnimation1(viewAnimation: UIView, delay: TimeInterval) {
-        UIView.animate(withDuration: 4, delay: 0, options: [.repeat, .curveLinear]) {
+        UIView.animate(withDuration: 4, delay: 0, options: [.repeat,.curveLinear]) {
             self.viewRoad1.frame = CGRect(
                 x: self.view.bounds.midX - self.viewRoadWeight,
                 y: self.view.bounds.maxY + self.viewRoadHeight,
@@ -232,7 +228,6 @@ class ViewController: UIViewController {
                 height: self.viewRoadHeight)
         }
     }
-    
     @objc private func moveCarLeft() {
         
         if !imageCar.frame.origin.x.isLess(than: view.frame.minX) {
@@ -243,7 +238,6 @@ class ViewController: UIViewController {
             self.imageCar.center.x = self.imageCar.center.x
         }
     }
-    
     @objc private func moveCarRight() {
         if imageCar.frame.origin.x.isLess(than: view.frame.maxX - imageCar.frame.width) {
             UIView.animate(withDuration: 0.3, delay: 0) {
@@ -253,7 +247,6 @@ class ViewController: UIViewController {
             self.imageCar.center.x = self.imageCar.center.x
         }
     }
-    
     func setLevelTimer() {
         let speedSegmentedControl = UserDefaults.standard.integer(forKey: "level")
            switch speedSegmentedControl {
@@ -265,9 +258,8 @@ class ViewController: UIViewController {
                setupTimerHard()
            default:
                break
-           }
-       }
-    
+        }
+    }
     func setTransport() -> UIImage {
         var imageTransport = UIImage()
         let speedSegmentedControl = UserDefaults.standard.integer(forKey: "transport")
@@ -280,9 +272,9 @@ class ViewController: UIViewController {
                imageTransport = image!
            default:
                break
-           }
+        }
         return imageTransport
-       }
+    }
     
     func setAbstraction() -> UIImage {
         var imageAbsraction = UIImage()
@@ -296,9 +288,35 @@ class ViewController: UIViewController {
                imageAbsraction = image!
            default:
                break
-           }
+        }
         return imageAbsraction
-       }
+    }
+    
+    private func documentsUrl() -> URL? {
+        let fileManager = FileManager.default
+        let url = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        return url
+    }
+        
+    private func saveUser() {
+        let user = UserRacer(userDate: Date(), userName: userRacer.userName, userAge: userRacer.userAge, userDistance: userRacer.userDistance, userTime: userRacer.userTime)
+        let resultData = try? JSONEncoder().encode(user)
+        guard let resultData = resultData else  {
+            assertionFailure("result data is nil")
+            return
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let now = Date()
+        let dateString = formatter.string(from:now)
+        let resultUrl = documentsUrl()
+        let userResultUrl = resultUrl?.appendingPathComponent(dateString)
+        guard let userResultUrl = userResultUrl else {
+            assertionFailure("No result url")
+            return
+        }
+        FileManager.default.createFile(atPath: userResultUrl.path, contents: resultData, attributes: nil)
+    }
     
     // MARK: - Timers
     // MARK: -
@@ -341,8 +359,8 @@ class ViewController: UIViewController {
         self.dismiss(animated: true)
         timerRoad1?.invalidate()
         timerRoad2?.invalidate()
+        saveUser()
     }
-    
     @objc private func changeCoordinate() {
         UIView.animate(withDuration: 3, delay: 0, options: [ .curveLinear]) {
             self.imageStone.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + 111)
@@ -350,7 +368,6 @@ class ViewController: UIViewController {
             self.imageStone.transform = .identity
         }
     }
-    
     @objc private func changeCoordinate1() {
         UIView.animate(withDuration: 3, delay: 1, options: [ .curveLinear]) {
             self.imageStone1.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + 111)
@@ -358,7 +375,6 @@ class ViewController: UIViewController {
             self.imageStone1.transform = .identity
         }
     }
-    
     @objc private func changeCoordinate2() {
         UIView.animate(withDuration: 3, delay: 1, options: [ .curveLinear]) {
             self.imageStone2.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + 111)
@@ -366,7 +382,6 @@ class ViewController: UIViewController {
             self.imageStone2.transform = .identity
         }
     }
-    
     @objc private func changeCoordinate3() {
         UIView.animate(withDuration: 3, delay: 1, options: [ .curveLinear]) {
             self.imageStone3.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + 111)
@@ -374,7 +389,6 @@ class ViewController: UIViewController {
             self.imageStone3.transform = .identity
         }
     }
-    
     @objc private func changeCoordinate4() {
         UIView.animate(withDuration: 3, delay: 0, options: [ .curveLinear]) {
             self.imageStone4.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + 111)
@@ -382,20 +396,12 @@ class ViewController: UIViewController {
             self.imageStone4.transform = .identity
         }
     }
-    
     @objc private func countTimeOfGame() {
         countSec += 1
-        userTime = String(countSec)
-        userDistace = String(countSec * 25)
-        
-        guard let time = userTime,
-              let distance = userDistace
-        else {
-                  return
-              }
-        labelRight.text = time + "sec.," + distance + "met."
+        userRacer.userTime = countSec
+        userRacer.userDistance = countSec * 25
+        labelRight.text = String(userRacer.userTime ?? 0) + "sec.," + String(userRacer.userDistance ?? 0) + "met."
     }
-    
     @objc private func intersectionCheck() {
         guard   let imageCarView = self.imageCar.layer.presentation(),
                 let imageStoneView = self.imageStone.layer.presentation(),
@@ -403,7 +409,8 @@ class ViewController: UIViewController {
                 let imageStone2View = self.imageStone2.layer.presentation(),
                 let imageStone3View = self.imageStone3.layer.presentation(),
                 let imageStone4View = self.imageStone4.layer.presentation()
-        else {return
+        else {
+            return
         }
         
         if  imageStoneView.frame.intersects(imageCarView.frame.insetBy(dx: 20, dy: 5)) || imageStone1View.frame.intersects(imageCarView.frame.insetBy(dx: 20, dy: 5)) || imageStone2View.frame.intersects(imageCarView.frame.insetBy(dx: 20, dy: 5)) ||
